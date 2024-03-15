@@ -1,70 +1,123 @@
 
-import { Button, Container, Grid, styled } from "@mui/material"
+import "./keyframes.css";
+
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { Checklist, Home, Storage } from "@mui/icons-material";
+import { Tooltip, styled } from "@mui/material"
 
 import logo from "../../icon.svg";
 
-const StyledContainerItem = styled(Container)(({ theme }) => ({
+const StyledContainerItem = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
+    position: "fixed",
+    zIndex: "1",
+    margin: "2rem 0 0 2rem",
+    borderRadius: "50%",
+    width: "5rem",
+    height: "5rem",
     display: "flex",
-    height: "100%",
-    "span": {
-      color: "#fff",
-      fontSize: "1.2rem",
-      fontWeight: "bold",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgb(133, 118, 134)",
+    transition: "all 0.1s ease-in-out",
+    "&:hover": {
       cursor: "pointer",
-      margin: "auto 0.5rem",
-      width: "100%",
-      textAlign: "center",
-      "&:hover": {
-        color: "#e0e0e0",
-      },
-    }
+      backgroundColor: "rgb(170, 151, 172)",
+    },
   },
 }));
 
-function Header({ }) {
+const HeaderElement = styled("div")(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    position: "fixed",
+    zIndex: "1",
+    borderRadius: "50%",
+    margin: "2rem 0 0 3.2rem",
+    width: "2.5rem",
+    height: "2.5rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgb(133, 118, 134)",
+    transition: "all 0.1s ease-in-out",
+    color: "white",
+    "&:hover": {
+      cursor: "pointer",
+      backgroundColor: "rgb(170, 151, 172)",
+    },
+  },
+}));
+
+function HeaderSubmenu({ clicked }) {
   const navigate = useNavigate();
 
   const changeRoute = (route) => {
+    clicked();
     navigate(route);
   }
 
+  const elements = [
+    { name: "Home", route: "/", icon: <Home /> },
+    { name: "Status", route: "/status", icon: <Storage /> },
+    { name: "Versions", route: "/versions", icon: <Checklist />, link: "https://github.com/echo-project-org/echo-client/releases" }
+  ]
+
   return (
-    <Container sx={{
-      backgroundColor: "#49294d",
-      maxWidth: "100% !important",
-      padding: "0 !important",
-      height: "5rem",
-      borderBottom: "1px solid #e0e0e0",
-      boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
-      position: "fixed",
-    }}>
-      <Grid container sx={{}}>
-        <Grid item sx={{}}>
-          <div>
-            <img src={logo} alt="logo" style={{
+    <>
+      {
+        elements.map((element, index) => {
+          return (
+            <Tooltip title={element.name} placement="right">
+              <HeaderElement
+                sx={{
+                  top: `${(index * 4) + 6}rem`,
+                }}
+                key={index}
+                onClick={() => {
+                  if (element.link) return window.open(element.link, "_blank");
+                  changeRoute(element.route)
+                }}
+              >
+                {element.icon}
+              </HeaderElement>
+            </Tooltip>
+          )
+        })
+      }
+    </>
+  )
+
+}
+
+function Header({ }) {
+  const [subMenu, setSubMenu] = useState(false);
+  const [wasOpened, setWasOpened] = useState(false);
+
+  const toggleMenu = () => {
+    setSubMenu((prev) => !prev);
+    setWasOpened(true);
+  }
+
+  return (
+    <>
+      {subMenu ? <HeaderSubmenu clicked={toggleMenu} /> : null}
+      <Tooltip title="Other pages" placement="right">
+        <StyledContainerItem onClick={toggleMenu}>
+
+          <img
+            src={logo}
+            alt="logo"
+            className={subMenu ? "rotate" : (wasOpened ? "rotateInv" : "")}
+            style={{
               height: "3rem",
               width: "3rem",
-              margin: "1rem 1rem 1rem 2.2rem",
-            }} />
-          </div>
-        </Grid>
-        <Grid item sx={{ display: "flex" }}>
-          <StyledContainerItem item className="noselect">
-            <span onClick={() => changeRoute("/")}>
-              Home
-            </span>
-          </StyledContainerItem>
-          <StyledContainerItem item className="noselect">
-            <span onClick={() => changeRoute("/status")}>
-              Status
-            </span>
-          </StyledContainerItem>
-        </Grid>
-      </Grid>
-
-    </Container>
+            }}
+          />
+        </StyledContainerItem>
+      </Tooltip>
+    </>
   )
 }
 

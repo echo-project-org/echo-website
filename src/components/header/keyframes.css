@@ -1,0 +1,38 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+.rotate {
+    animation: rotate .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation: rotate .3s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes rotateInv {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(-180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(-360deg) scale(1);
+    }
+}
+
+.rotateInv {
+    animation: rotateInv .3s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation: rotateInv .3s linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
