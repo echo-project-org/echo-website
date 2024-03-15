@@ -24,7 +24,31 @@ const ImagesContainer = styled("div")(({ theme }) => ({
 
 const ImageContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    width: "30%",
+    width: "25rem",
+    margin: "1.5rem",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    borderRadius: "0.5rem",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
+    "& img": {
+      margin: "2rem 3rem 2rem 3rem",
+      width: "20rem",
+      objectFit: "cover",
+      borderRadius: "0.5rem",
+      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+      zIndex: "0",
+      transition: "all 0.1s ease-in-out",
+      "&:hover": {
+        cursor: "pointer",
+        zIndex: "0",
+        transform: "scale(1.3)",
+      }
+    },
+  },
+  [theme.breakpoints.up('md')]: {
+    width: "35rem",
     margin: "1.5rem",
     justifyContent: "center",
     alignItems: "center",

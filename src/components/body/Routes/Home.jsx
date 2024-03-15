@@ -1,6 +1,6 @@
+import "./typewriter.css";
 
 import { Container, Divider, styled } from "@mui/material"
-
 import ImageGallery from "../../utils/ImageGallery";
 
 const StyledBodyContainer = styled("div")(({ theme }) => ({
@@ -9,12 +9,14 @@ const StyledBodyContainer = styled("div")(({ theme }) => ({
     width: "100%",
     height: "fit-content",
     flexDirection: "column",
+    flex: "1 0 auto",
   }
 }));
 
 const FirstArticleContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     display: "flex",
+    position: "relative",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -23,6 +25,37 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     margin: "auto",
     gap: "1rem",
     color: "white",
+    textAlign: "center",
+    "& h1": {
+      fontSize: "2rem",
+    },
+    "& p": {
+      fontSize: "1rem",
+    },
+    "& h2": {
+      fontSize: "1.5rem",
+    },
+    "& a": {
+      color: "#bc5dc8",
+      textDecoration: "none",
+      transition: "all 0.1s ease-in-out",
+      "&:hover": {
+        color: "#ea94f4",
+      },
+    },
+  },
+  [theme.breakpoints.up('md')]: {
+    display: "flex",
+    position: "relative",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50vh",
+    width: "100%",
+    margin: "auto",
+    gap: "1rem",
+    color: "white",
+    textAlign: "center",
     "& h1": {
       fontSize: "3rem",
     },
@@ -45,13 +78,14 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
 
 const SecondArticleContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
+    position: "relative",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "fit-content",
     width: "100%",
-    margin: "0"
+    margin: "0",
   }
 }));
 
@@ -59,7 +93,7 @@ function Home({ }) {
   return (
     <StyledBodyContainer>
       <FirstArticleContainer>
-        <h1>Something great is being built here!</h1>
+        <h1 className="line-1 anim-typewriter">Welcome to <a>ECHO!</a></h1>
         <p>Check back later!</p>
         <h2>Or</h2>
         <p>Help us on <a href="https://github.com/echo-project-org" target="_blank">Github</a></p>
