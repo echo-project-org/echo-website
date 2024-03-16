@@ -21,10 +21,12 @@ const StyledContainerItem = styled("div")(({ theme }) => ({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgb(133, 118, 134)",
+    opacity: "0.4",
     transition: "all 0.1s ease-in-out",
     "&:hover": {
       cursor: "pointer",
       backgroundColor: "rgb(170, 151, 172)",
+      opacity: "1",
     },
   },
 }));
