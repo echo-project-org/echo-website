@@ -1,19 +1,17 @@
 .line-1 {
     position: relative;
-    width: 9.5em;
+    width: 9em;
     margin: 0 auto;
     border-right: 2px solid rgba(255, 255, 255, .75);
-    font-size: 180%;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    transform: translateY(-50%);
 }
 
 /* Animation */
 .anim-typewriter {
-    animation: typewriter 1s steps(16) 1s 1 normal both,
-        blinkTextCursor 500ms steps(2) infinite normal;
+    animation: typewriter 1s steps(16) 0s 1 normal both,
+        blinkTextCursor 1000ms steps(2) infinite normal;
 }
 
 @keyframes typewriter {
@@ -22,7 +20,7 @@
     }
 
     to {
-        width: 9.5em;
+        width: 8.6em;
     }
 }
 

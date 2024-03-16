@@ -1,6 +1,6 @@
 import "./typewriter.css";
 
-import { Container, Divider, styled } from "@mui/material"
+import { Button, Container, Divider, Grid, styled } from "@mui/material"
 import ImageGallery from "../../utils/ImageGallery";
 
 const StyledBodyContainer = styled("div")(({ theme }) => ({
@@ -20,7 +20,7 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "50vh",
+    height: "70vh",
     width: "100%",
     margin: "auto",
     gap: "1rem",
@@ -38,7 +38,7 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     "& a": {
       color: "#bc5dc8",
       textDecoration: "none",
-      transition: "all 0.1s ease-in-out",
+      transition: "color 0.1s ease-in-out",
       "&:hover": {
         color: "#ea94f4",
       },
@@ -89,14 +89,91 @@ const SecondArticleContainer = styled("div")(({ theme }) => ({
   }
 }));
 
+const DownloadButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    position: "relative",
+    margin: "0 0 2rem 0",
+    position: "relative",
+    width: "20rem",
+    height: "4rem",
+    top: "1rem",
+    backgroundColor: "rgb(142, 77, 156)",
+    color: "white",
+    borderRadius: "1rem",
+    border: "1px solid rgba(255,255,255,0.75)",
+    boxShadow: "0px 10px 20px 2px rgb(106, 57, 117, .8)",
+    "&:hover": {
+      transform: "translateY(-5px)",
+      backgroundColor: "rgb(212, 116, 233)",
+      boxShadow: "0px 10px 10px 2px rgb(142, 77, 156, .8)",
+    },
+    "& span": {
+      color: "white",
+      fontWeight: "bold",
+      fontSize: "1.5rem",
+      textDecoration: "none",
+    }
+  }
+}));
+
+const MoreVersionsButton = styled(Button)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    position: "relative",
+    margin: "0 0 2rem 0",
+    position: "relative",
+    width: "20rem",
+    height: "4rem",
+    top: "1rem",
+    backgroundColor: "rgba(142, 77, 156, .1)",
+    color: "white",
+    borderRadius: "1rem",
+    border: "1px solid rgba(255,255,255,0.75)",
+    boxShadow: "0px 10px 20px 2px rgba(68, 36, 72, .8)",
+    "&:hover": {
+      transform: "translateY(-5px)",
+      backgroundColor: "rgba(212, 116, 233, .1)",
+      boxShadow: "0px 10px 10px 2px rgb(90, 47, 97, .8)",
+    },
+    "& span": {
+      color: "white",
+      fontWeight: "bold",
+      fontSize: "1.5rem",
+      textDecoration: "none",
+    }
+  }
+}));
+
+
 function Home({ }) {
   return (
     <StyledBodyContainer>
       <FirstArticleContainer>
         <h1 className="line-1 anim-typewriter">Welcome to <a>ECHO!</a></h1>
-        <p>Check back later!</p>
-        <h2>Or</h2>
-        <p>Help us on <a href="https://github.com/echo-project-org" target="_blank">Github</a></p>
+        <p>A <i>simple</i>, <i>lightweight</i> and <a>OPENSOURCE</a> voice and text chatting program!</p>
+        <h2>Want to help?</h2>
+        <p>Check us out on <a href="https://github.com/echo-project-org" target="_blank">Github</a></p>
+
+        <Grid container justifyContent="center" spacing={4}>
+          <Grid item>
+            <DownloadButton
+              variant="contained"
+              href="https://github.com/echo-project-org/echo-client/releases/latest"
+              target="_blank"
+            >
+              <span>Download latest</span>
+            </DownloadButton>
+          </Grid>
+
+          <Grid item>
+            <MoreVersionsButton
+              variant="contained"
+              href="https://github.com/echo-project-org/echo-client/releases"
+              target="_blank"
+            >
+              <span>More versions</span>
+            </MoreVersionsButton>
+          </Grid>
+        </Grid>
       </FirstArticleContainer>
 
       <Divider sx={{
