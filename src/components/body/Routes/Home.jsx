@@ -91,6 +91,7 @@ const ArticleContainer = styled("div")(({ theme }) => ({
 
 const DownloadButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
+    zIndex: "1",
     position: "relative",
     margin: "0 0 2rem 0",
     position: "relative",
@@ -118,6 +119,7 @@ const DownloadButton = styled(Button)(({ theme }) => ({
 
 const MoreVersionsButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
+    zIndex: "1",
     position: "relative",
     margin: "0 0 2rem 0",
     position: "relative",
@@ -146,6 +148,7 @@ const MoreVersionsButton = styled(Button)(({ theme }) => ({
 
 function Home({ }) {
   const divStyle = {
+    zIndex: "1",
     backgroundColor: "rgba(245, 163, 255, 0.1)",
     width: "100%",
     padding: "1rem",
@@ -156,6 +159,7 @@ function Home({ }) {
   }
 
   const containerStyle = {
+    zIndex: "1",
     color: "white",
     fontSize: "3rem",
     margin: "2rem 0 2rem 0",
@@ -166,11 +170,12 @@ function Home({ }) {
   }
 
   const aboutContent = {
+    zIndex: "1",
     color: "white",
     fontSize: "1.5rem",
     margin: "0 0 2rem 0",
     textAlign: "justify",
-    backgroundColor: "rgba(200, 200, 200, 0.1)",
+    backgroundColor: "rgb(66, 44, 68)",
     padding: "1.5rem",
     lineHeight: "1.3rem",
     width: "90%",

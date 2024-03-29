@@ -30,7 +30,7 @@ const ImageContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     display: "flex",
     borderRadius: "0.5rem",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: "rgb(72, 50, 74)",
     boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
     "& img": {
       margin: "2rem 3rem 2rem 3rem",
@@ -54,7 +54,7 @@ const ImageContainer = styled("div")(({ theme }) => ({
     alignItems: "center",
     display: "flex",
     borderRadius: "0.5rem",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    backgroundColor: "rgb(72, 50, 74) ",
     boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
     "& img": {
       margin: "2rem 3rem 2rem 3rem",
