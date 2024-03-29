@@ -76,7 +76,7 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
   }
 }));
 
-const SecondArticleContainer = styled("div")(({ theme }) => ({
+const ArticleContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     position: "relative",
     display: "flex",
@@ -182,7 +182,77 @@ function Home({ }) {
         boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
       }} />
 
-      <SecondArticleContainer>
+      <ArticleContainer>
+        <Container
+          sx={{
+            color: "white",
+            fontSize: "3rem",
+            margin: "2rem 0 2rem 0",
+            justifyContent: "center",
+            textAlign: "center",
+            alignItems: "center",
+            display: "flex",
+          }}
+        >
+          <div style={{
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            width: "fit-content",
+            padding: "1rem",
+            borderRadius: "1.5rem",
+            boxShadow: "0px 3px 0px 0px rgba(255,255,255,0.75)",
+            border: "1px solid rgba(255,255,255,0.75)",
+          }}>
+            About
+          </div>
+        </Container>
+
+        <Container
+          sx={{
+            color: "white",
+            fontSize: "1.5rem",
+            margin: "0 0 2rem 0",
+            textAlign: "justify",
+            backgroundColor: "rgba(200, 200, 200, 0.1)",
+            borderRadius: "1rem",
+            padding: "1.5rem",
+            lineHeight: "1.3rem",
+            maxWidth: "90% !important",
+          }}
+        >
+          <p style={{
+            margin: "0 0 1rem 0",
+          }}>
+            Echo is a user-friendly voice chat application designed to streamline communication, much like Discord. Developed using Electron and ReactJS, Echo offers a seamless experience for users to connect, chat, and collaborate effortlessly.<br /><br />
+            With Echo, users can create personalized chat rooms or join existing ones to engage in real-time voice conversations with friends, colleagues, or community members. The app's intuitive interface allows for easy navigation and interaction, ensuring a smooth user experience for both beginners and seasoned chat enthusiasts.<br /><br />
+            Key features of Echo include:<br /><br />
+            <ol type="1" style={{
+              padding: "0 0 0 2rem",
+            }}>
+              <li>Voice Chat: Enjoy high-quality voice communication with friends or groups in real-time, eliminating the need for typing and enhancing collaboration.</li><br />
+              <li>Customizable Rooms: Create or join chat rooms tailored to specific interests, topics, or communities, enabling users to connect with like-minded individuals effortlessly.</li><br />
+              <li>Text Chat Integration: In addition to voice communication, Echo supports text chat, allowing users to exchange messages alongside voice conversations for added convenience.</li><br />
+              <li>User Profiles: Customize your profile with avatars, usernames, and other personalization options to express yourself and build connections within the Echo community.</li><br />
+              <li>Moderation Tools: Empower room creators with moderation tools to manage conversations effectively, ensuring a safe and enjoyable environment for all users.</li><br />
+              <li>Cross-Platform Compatibility: Access Echo seamlessly across different devices and operating systems, including desktops, laptops, and mobile devices, for convenient communication on the go.</li><br />
+            </ol>
+            Overall, Echo redefines voice chat applications with its user-centric design, robust features, and smooth performance, making it an ideal choice for individuals, teams, and communities seeking a reliable platform for voice communication and collaboration.
+          </p>
+          <p>
+            Echo sets a new standard in voice chat applications with unparalleled voice quality that surpasses all others.<br /><br />
+            Whether you're engaging in one-on-one conversations or participating in group discussions, Echo ensures that every word is transmitted with exceptional clarity and fidelity. Say goodbye to muffled audio and lagging connections – with Echo, you can enjoy seamless communication that feels as natural as being in the same room.<br /><br />
+            Experience the difference with Echo's superior voice quality, setting the stage for immersive conversations and fostering deeper connections among users. Whether you're gaming, collaborating on projects, or simply catching up with friends, Echo's unmatched audio performance ensures that every interaction is a pleasure.<br /><br />
+          </p>
+        </Container>
+
+      </ArticleContainer>
+
+      <Divider sx={{
+        color: "white",
+        backgroundColor: "white",
+        boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
+      }} />
+
+      <ArticleContainer>
         <Container
           sx={{
             color: "white",
@@ -207,7 +277,7 @@ function Home({ }) {
         </Container>
 
         <ImageGallery />
-      </SecondArticleContainer>
+      </ArticleContainer>
     </StyledBodyContainer>
   )
 }
