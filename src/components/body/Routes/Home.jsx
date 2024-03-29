@@ -145,6 +145,40 @@ const MoreVersionsButton = styled(Button)(({ theme }) => ({
 
 
 function Home({ }) {
+  const divStyle = {
+    backgroundColor: "rgba(245, 163, 255, 0.1)",
+    width: "100%",
+    padding: "1rem",
+    boxShadow: "0px 3px 0px 0px rgba(245, 163, 255, 0.75)",
+    border: "1px solid rgba(245, 163, 255, 0.75)",
+    color: "rgb(245, 163, 255)",
+    textTransform: "uppercase",
+  }
+
+  const containerStyle = {
+    color: "white",
+    fontSize: "3rem",
+    margin: "2rem 0 2rem 0",
+    justifyContent: "center",
+    textAlign: "center",
+    alignItems: "center",
+    display: "flex",
+  }
+
+  const aboutContent = {
+    color: "white",
+    fontSize: "1.5rem",
+    margin: "0 0 2rem 0",
+    textAlign: "justify",
+    backgroundColor: "rgba(200, 200, 200, 0.1)",
+    padding: "1.5rem",
+    lineHeight: "1.3rem",
+    width: "90%",
+    maxWidth: "90% !important",
+    overflow: "auto",
+    maxHeight: "70vh",
+  }
+
   return (
     <StyledBodyContainer>
       <FirstArticleContainer>
@@ -183,42 +217,13 @@ function Home({ }) {
       }} />
 
       <ArticleContainer>
-        <Container
-          sx={{
-            color: "white",
-            fontSize: "3rem",
-            margin: "2rem 0 2rem 0",
-            justifyContent: "center",
-            textAlign: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <div style={{
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            width: "fit-content",
-            padding: "1rem",
-            borderRadius: "1.5rem",
-            boxShadow: "0px 3px 0px 0px rgba(255,255,255,0.75)",
-            border: "1px solid rgba(255,255,255,0.75)",
-          }}>
+        <Container sx={containerStyle}>
+          <div style={divStyle}>
             About
           </div>
         </Container>
 
-        <Container
-          sx={{
-            color: "white",
-            fontSize: "1.5rem",
-            margin: "0 0 2rem 0",
-            textAlign: "justify",
-            backgroundColor: "rgba(200, 200, 200, 0.1)",
-            borderRadius: "1rem",
-            padding: "1.5rem",
-            lineHeight: "1.3rem",
-            maxWidth: "90% !important",
-          }}
-        >
+        <Container sx={aboutContent}>
           <p style={{
             margin: "0 0 1rem 0",
           }}>
@@ -240,7 +245,7 @@ function Home({ }) {
           <p>
             Echo sets a new standard in voice chat applications with unparalleled voice quality that surpasses all others.<br /><br />
             Whether you're engaging in one-on-one conversations or participating in group discussions, Echo ensures that every word is transmitted with exceptional clarity and fidelity. Say goodbye to muffled audio and lagging connections – with Echo, you can enjoy seamless communication that feels as natural as being in the same room.<br /><br />
-            Experience the difference with Echo's superior voice quality, setting the stage for immersive conversations and fostering deeper connections among users. Whether you're gaming, collaborating on projects, or simply catching up with friends, Echo's unmatched audio performance ensures that every interaction is a pleasure.<br /><br />
+            Experience the difference with Echo's superior voice quality, setting the stage for immersive conversations and fostering deeper connections among users. Whether you're gaming, collaborating on projects, or simply catching up with friends, Echo's unmatched audio performance ensures that every interaction is a pleasure.
           </p>
         </Container>
 
@@ -253,25 +258,8 @@ function Home({ }) {
       }} />
 
       <ArticleContainer>
-        <Container
-          sx={{
-            color: "white",
-            fontSize: "3rem",
-            margin: "2rem 0 2rem 0",
-            justifyContent: "center",
-            textAlign: "center",
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <div style={{
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            width: "fit-content",
-            padding: "1rem",
-            borderRadius: "1.5rem",
-            boxShadow: "0px 3px 0px 0px rgba(255,255,255,0.75)",
-            border: "1px solid rgba(255,255,255,0.75)",
-          }}>
+        <Container sx={containerStyle}>
+          <div style={divStyle}>
             Gallery
           </div>
         </Container>
