@@ -12,7 +12,7 @@ import logo from "../../icon.svg";
 const StyledContainerItem = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     position: "fixed",
-    zIndex: "1",
+    zIndex: "1000",
     margin: "2rem 0 0 2rem",
     borderRadius: "50%",
     width: "5rem",
