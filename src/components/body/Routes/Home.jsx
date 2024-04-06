@@ -242,7 +242,7 @@ function Home({ }) {
               <li>Customizable Rooms: Create or join chat rooms tailored to specific interests, topics, or communities, enabling users to connect with like-minded individuals effortlessly.</li><br />
               <li>Text Chat Integration: In addition to voice communication, Echo supports text chat, allowing users to exchange messages alongside voice conversations for added convenience.</li><br />
               <li>User Profiles: Customize your profile with avatars, usernames, and other personalization options to express yourself and build connections within the Echo community.</li><br />
-              <li>Cusomizable Theme: Make the app look the way you want, you are not stuck using a boring gray app!</li><br />
+              <li>Customizable Theme: Make the app look the way you want, you are not stuck using a boring gray app!</li><br />
               <li>Moderation Tools: Empower room creators with moderation tools to manage conversations effectively, ensuring a safe and enjoyable environment for all users.</li><br />
               <li>Cross-Platform Compatibility: Access Echo from Windows or Linux without any issues. (Mac support planned)</li><br />
             </ol>
