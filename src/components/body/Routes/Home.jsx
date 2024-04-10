@@ -24,7 +24,7 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "70vh",
+    height: "100vh",
     width: "100%",
     margin: "auto",
     gap: "1rem",
