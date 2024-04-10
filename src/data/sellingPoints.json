@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "title": "Exceptional call quality",
+        "description": "Enjoy high-quality voice communication with friends or groups in real-time. Moreover, share your screen to you friend or coworkers with exceptional quality!",
+        "img": "/images/callQuality.png",
+        "alt": "Call Quality",
+        "alignRight": true
+    }
+]
