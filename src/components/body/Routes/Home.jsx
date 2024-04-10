@@ -190,8 +190,8 @@ function Home({ }) {
     <StyledBodyContainer>
       <FirstArticleContainer>
         <h1 className="line-1 anim-typewriter">Welcome to <a>ECHO!</a></h1>
-        <p>A <i>simple</i>, <i>lightweight</i> and <a>OPENSOURCE</a> voice and text chatting program!</p>
-        <h2>Want to help?</h2>
+        <p>A <i>simple</i>, <i>lightweight</i> and <a>OPENSOURCE</a> voice and text chatting app!</p>
+        <h2 style={{marginTop: "2rem"}}>Want to help?</h2>
         <p>Check us out on <a href="https://github.com/echo-project-org" target="_blank">Github</a></p>
 
         <Grid container justifyContent="center" spacing={4}>
