@@ -2,6 +2,7 @@ import "./typewriter.css";
 
 import { Button, Container, Divider, Grid, styled } from "@mui/material"
 import ImageGallery from "../../utils/ImageGallery";
+import SellingPointParagraph from "../../SellingPointParagraph";
 
 const StyledBodyContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
@@ -182,6 +183,31 @@ function Home({ }) {
     maxHeight: "70vh",
   }
 
+  const sellingPointContainer = {
+    zIndex: "1",
+    color: "white",
+    fontSize: "3rem",
+    margin: "2rem 0 2rem 0",
+    justifyContent: "center",
+    textAlign: "justify",
+    alignItems: "center",
+    display: "flex",
+  }
+
+  const h1Style = {
+    zIndex: "1",
+    color: "white",
+    fontSize: "2rem",
+    fontWeight: "bold",
+    margin: "0 0 2rem 0",
+    padding: "1.5rem",
+    lineHeight: "1.3rem",
+    width: "90%",
+    maxWidth: "90% !important",
+    overflow: "auto",
+    maxHeight: "70vh",
+  }
+
   return (
     <StyledBodyContainer>
       <FirstArticleContainer>
@@ -212,6 +238,16 @@ function Home({ }) {
           </Grid>
         </Grid>
       </FirstArticleContainer>
+
+      <Divider sx={{
+        color: "white",
+        backgroundColor: "white",
+        boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
+      }} />
+
+      <ArticleContainer>
+        <SellingPointParagraph/>
+      </ArticleContainer>
 
       <Divider sx={{
         color: "white",
