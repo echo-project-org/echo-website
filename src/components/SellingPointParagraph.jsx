@@ -1,15 +1,51 @@
 import React from 'react'
-import { Grid, Typography } from "@mui/material"
+import { Box, Grid } from "@mui/material"
+
+const sellingPointTitleStyle = {
+  fontSize: '2rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: '1rem',
+  color: "#BC5DC8"
+}
+
+const sellingPointDescriptionStyle = {
+  fontSize: '1.3rem',
+  color: "white",
+  textAlign: 'center',
+  margin: 'auto',
+  marginBottom: '1rem',
+  width: '50%',
+}
 
 function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingPointImage, imageRight }) {
+  if (imageRight) return (
+    <Grid container justifyContent="center" spacing={4}>
+      <Grid item xs={12} md={6} margin="auto">
+        <Box height="100%">
+          <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
+          <p style={sellingPointDescriptionStyle}>{sellingPointDescription}</p>
+        </Box>
+      </Grid>
+      <Grid item xs={12} md={6} margin="auto">
+        <Box height="100%">
+          <img src={sellingPointImage} alt={sellingPoint} width="50%" />
+        </Box>
+      </Grid>
+    </Grid>
+  )
   return (
     <Grid container justifyContent="center" spacing={4}>
-      <Grid item xs={12} md={6}>
-        <Typography variant="h4">{sellingPoint}</Typography>
-        <Typography variant="body1">{sellingPointDescription}</Typography>
+      <Grid item xs={12} md={6} margin="auto">
+        <Box height="100%">
+          <img src={sellingPointImage} alt={sellingPoint} width="50%" />
+        </Box>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <img src={sellingPointImage} alt={sellingPoint} width="50%" />
+      <Grid item xs={12} md={6} margin="auto">
+        <Box height="100%">
+          <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
+          <p style={sellingPointDescriptionStyle}>{sellingPointDescription}</p>
+        </Box>
       </Grid>
     </Grid>
   )
