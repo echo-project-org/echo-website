@@ -20,7 +20,7 @@ const sellingPointDescriptionStyle = {
 
 function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingPointImage, imageRight }) {
   if (imageRight) return (
-    <Grid container justifyContent="center" spacing={4}>
+    <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
       <Grid item xs={12} md={6} margin="auto">
         <Box height="100%">
           <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
@@ -35,7 +35,7 @@ function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingP
     </Grid>
   )
   return (
-    <Grid container justifyContent="center" spacing={4}>
+    <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
       <Grid item xs={12} md={6} margin="auto">
         <Box height="100%">
           <img src={sellingPointImage} alt={sellingPoint} width="50%" />

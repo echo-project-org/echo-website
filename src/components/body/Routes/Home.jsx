@@ -93,6 +93,20 @@ const ArticleContainer = styled("div")(({ theme }) => ({
   }
 }));
 
+const SellingPointsContainer = styled("div")(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "fit-content",
+    width: "100%",
+    margin: "auto",
+    marginBottom: "30vh"
+  }
+}));
+
 const DownloadButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     zIndex: "1",
@@ -243,7 +257,7 @@ function Home({ }) {
         boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
       }} />
 
-      <ArticleContainer>
+      <SellingPointsContainer>
         {
           sellingPoints.map((sellingPoint, index) => {
             return (
@@ -257,7 +271,7 @@ function Home({ }) {
             )
           })
         }
-      </ArticleContainer>
+      </SellingPointsContainer>
 
       <Divider sx={{
         color: "white",
