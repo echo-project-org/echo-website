@@ -1,7 +1,7 @@
 import "./typewriter.css";
 
 import { Button, Container, Divider, Grid, styled } from "@mui/material"
-import { ExpandMoreIcon } from '@mui/icons-material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import SellingPointParagraph from "../../SellingPointParagraph";
 import ImageGallery from "../../utils/ImageGallery";
@@ -215,6 +215,26 @@ function Home({ }) {
             </MoreVersionsButton>
           </Grid>
         </Grid>
+
+        <ExpandMoreIcon
+          sx={{
+            color: "white",
+            fontSize: "4rem",
+            position: "absolute",
+            bottom: "1rem",
+            cursor: "pointer",
+            "&:hover": {
+              color: "#bc5dc8",
+            }
+          }}
+
+          onClick={() => {
+            window.scrollTo({
+              top: window.innerHeight,
+              behavior: "smooth"
+            });
+          }}
+        />
       </FirstArticleContainer>
 
       <Divider sx={{
