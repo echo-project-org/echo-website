@@ -92,7 +92,6 @@ const ArticleContainer = styled("div")(({ theme }) => ({
 const DownloadButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     zIndex: "1",
-    position: "relative",
     margin: "0 0 2rem 0",
     position: "relative",
     width: "20rem",
@@ -120,7 +119,6 @@ const DownloadButton = styled(Button)(({ theme }) => ({
 const MoreVersionsButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     zIndex: "1",
-    position: "relative",
     margin: "0 0 2rem 0",
     position: "relative",
     width: "20rem",
