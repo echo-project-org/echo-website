@@ -1,8 +1,11 @@
 import "./typewriter.css";
 
 import { Button, Container, Divider, Grid, styled } from "@mui/material"
-import ImageGallery from "../../utils/ImageGallery";
+import { ExpandMoreIcon } from '@mui/icons-material';
+
 import SellingPointParagraph from "../../SellingPointParagraph";
+import ImageGallery from "../../utils/ImageGallery";
+import sellingPoints from "../../../data/sellingPoints";
 
 const StyledBodyContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
@@ -183,31 +186,6 @@ function Home({ }) {
     maxHeight: "70vh",
   }
 
-  const sellingPointContainer = {
-    zIndex: "1",
-    color: "white",
-    fontSize: "3rem",
-    margin: "2rem 0 2rem 0",
-    justifyContent: "center",
-    textAlign: "justify",
-    alignItems: "center",
-    display: "flex",
-  }
-
-  const h1Style = {
-    zIndex: "1",
-    color: "white",
-    fontSize: "2rem",
-    fontWeight: "bold",
-    margin: "0 0 2rem 0",
-    padding: "1.5rem",
-    lineHeight: "1.3rem",
-    width: "90%",
-    maxWidth: "90% !important",
-    overflow: "auto",
-    maxHeight: "70vh",
-  }
-
   return (
     <StyledBodyContainer>
       <FirstArticleContainer>
@@ -246,7 +224,19 @@ function Home({ }) {
       }} />
 
       <ArticleContainer>
-        <SellingPointParagraph/>
+        {
+          sellingPoints.map((sellingPoint, index) => {
+            return (
+              <SellingPointParagraph
+                key={index}
+                sellingPoint={sellingPoint.title}
+                sellingPointDescription={sellingPoint.description}
+                sellingPointImage={sellingPoint.img}
+                imageRight={sellingPoint.alignRight}
+              />
+            )
+          })
+        }
       </ArticleContainer>
 
       <Divider sx={{
