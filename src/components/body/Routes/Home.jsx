@@ -258,7 +258,7 @@ function Home({ }) {
         }
       </SellingPointsContainer>
 
-      <Divider sx={{
+{/*       <Divider sx={{
         color: "white",
         backgroundColor: "white",
         boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
@@ -272,7 +272,7 @@ function Home({ }) {
         </Container>
 
         <About />
-      </ArticleContainer>
+      </ArticleContainer> */}
 
       <Divider sx={{
         color: "white",
