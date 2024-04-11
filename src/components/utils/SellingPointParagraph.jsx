@@ -19,6 +19,45 @@ const sellingPointDescriptionStyle = {
 }
 
 function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingPointImage, imageRight }) {
+  const imageRef = React.useRef(null);
+  const imageRefLeft = React.useRef(null);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      // check window size, if less than 600px, return
+      if (window.innerWidth < 1200) {
+        if (imageRef.current) imageRef.current.style.right = "0px";
+        if (imageRefLeft.current) imageRefLeft.current.style.left = "0px";
+        return
+      };
+
+      const value = Math.floor(window.scrollY / 20)
+      if (imageRef.current) {
+        imageRef.current.style.right = `${value}px`;
+      }
+
+      if (imageRefLeft.current) {
+        // imageRef.current.style.top = `${Math.floor(window.scrollY / 10)}px`;
+        imageRefLeft.current.style.left = `${value}px`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const imageStyle = {
+    position: "relative",
+    width: "40%",
+    justifyContent: "center",
+    display: "block",
+    margin: "auto",
+  }
+
   if (imageRight) return (
     <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
       <Grid item xs={12} md={6} margin="auto">
@@ -29,7 +68,7 @@ function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingP
       </Grid>
       <Grid item xs={12} md={6} margin="auto">
         <Box height="100%">
-          <img src={sellingPointImage} alt={sellingPoint} width="50%" />
+          <img ref={imageRef} src={sellingPointImage} alt={sellingPoint} style={imageStyle} />
         </Box>
       </Grid>
     </Grid>
@@ -38,7 +77,7 @@ function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingP
     <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
       <Grid item xs={12} md={6} margin="auto">
         <Box height="100%">
-          <img src={sellingPointImage} alt={sellingPoint} width="50%" />
+          <img ref={imageRefLeft} src={sellingPointImage} alt={sellingPoint} style={imageStyle} />
         </Box>
       </Grid>
       <Grid item xs={12} md={6} margin="auto">

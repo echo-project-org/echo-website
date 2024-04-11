@@ -3,28 +3,28 @@
         "id": 1,
         "title": "Exceptional call quality",
         "description": "Enjoy market-leading quality audio communication with friends or groups in real-time. We ensure that every call is crip and clean at all times, so you can hear everyone in a natual way!",
-        "img": "/images/callQuality.png",
+        "img": "/callQuality.png",
         "alt": "Call Quality",
         "alignRight": true
     },{
         "id": 2,
         "title": "Share your screen",
         "description": "Share your screen, window or game with outstanding quality. 1080p 60fps streams for everyone, making it easy to showcase your work or play games with friends.",
-        "img": "/images/groupCall.png",
+        "img": "/shareScreen.png",
         "alt": "Group Call",
         "alignRight": false
     },{
         "id": 3,
         "title": "Customizable themes",
         "description": "You are not stuck using a gray app, customize the theme to make it suit your style. You chose the theme, we make it happen.",
-        "img": "/images/shareScreen.png",
+        "img": "/customThemes.png",
         "alt": "Share Screen",
         "alignRight": true
     },{
         "id": 4,
         "title": "Open source",
         "description": "We are open source, meaning you can see the code that runs the app. This means you can trust us, and even contribute to the app if you want to!",
-        "img": "/images/shareScreen.png",
+        "img": "/openSource.png",
         "alt": "Open source",
         "alignRight": false
     }
