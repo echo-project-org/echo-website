@@ -7,7 +7,7 @@ const MainContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100%",
+    height: "fit-content",
     width: "100%",
   }
 }));
@@ -19,57 +19,38 @@ const ImagesContainer = styled("div")(({ theme }) => ({
     justifyContent: "center",
     flexWrap: "wrap",
     width: "100%",
+    gap: "1.5rem",
   }
 }));
 
 const ImageContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    width: "25rem",
-    margin: "1.5rem",
+    width: "min(100%, 32rem)",
+    padding: "0.75rem",
     justifyContent: "center",
     alignItems: "center",
     display: "flex",
-    borderRadius: "0.5rem",
-    backgroundColor: "rgb(72, 50, 74)",
-    boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
+    borderRadius: "1rem",
+    backgroundColor: "rgba(255, 255, 255, 0.045)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    boxShadow: "0 16px 40px rgba(0, 0, 0, 0.2)",
     "& img": {
-      margin: "2rem 3rem 2rem 3rem",
-      width: "20rem",
-      objectFit: "cover",
-      borderRadius: "0.5rem",
-      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
+      width: "100%",
+      height: "auto",
+      objectFit: "contain",
+      borderRadius: "0.65rem",
+      boxShadow: "0 8px 24px rgba(0, 0, 0, 0.3)",
       zIndex: "0",
-      transition: "all 0.1s ease-in-out",
+      transition: "transform 180ms ease",
       "&:hover": {
         cursor: "pointer",
         zIndex: "0",
-        transform: "scale(1.3)",
+        transform: "scale(1.015)",
       }
     },
   },
   [theme.breakpoints.up('md')]: {
-    width: "35rem",
-    margin: "1.5rem",
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
-    borderRadius: "0.5rem",
-    backgroundColor: "rgb(72, 50, 74) ",
-    boxShadow: "0px 0px 10px 0px rgba(255,255,255,0.75)",
-    "& img": {
-      margin: "2rem 3rem 2rem 3rem",
-      width: "30rem",
-      objectFit: "cover",
-      borderRadius: "0.5rem",
-      boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
-      zIndex: "0",
-      transition: "all 0.1s ease-in-out",
-      "&:hover": {
-        cursor: "pointer",
-        zIndex: "0",
-        transform: "scale(1.3)",
-      }
-    },
+    width: "min(100%, 34rem)",
   }
 }));
 
@@ -89,7 +70,8 @@ const ZoomedImageContainer = styled("div")(({ theme }) => ({
     "& img": {
       transform: "rotate(90deg)",
       cursor: "none",
-      height: "45%",
+      maxWidth: "92vw",
+      maxHeight: "88vh",
       objectFit: "contain",
       borderRadius: "0.5rem",
       boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",
@@ -110,8 +92,9 @@ const ZoomedImageContainer = styled("div")(({ theme }) => ({
     "& img": {
       transform: "rotate(0deg)",
       cursor: "none",
-      height: "fit-content",
-      width: "70%",
+      height: "auto",
+      maxHeight: "88vh",
+      width: "min(88vw, 75rem)",
       objectFit: "contain",
       borderRadius: "0.5rem",
       boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.75)",

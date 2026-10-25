@@ -1,92 +1,63 @@
-import React from 'react'
-import { Box, Grid } from "@mui/material"
+import { Box } from "@mui/material"
 
 const sellingPointTitleStyle = {
-  fontSize: '2rem',
+  fontSize: 'clamp(1.6rem, 3vw, 2.25rem)',
   fontWeight: 'bold',
-  textAlign: 'center',
-  marginBottom: '1rem',
-  color: "#BC5DC8"
+  textAlign: 'left',
+  marginBottom: '1.25rem',
+  color: "#dda6eb"
 }
 
 const sellingPointDescriptionStyle = {
-  fontSize: '1.3rem',
-  color: "white",
-  textAlign: 'center',
-  margin: 'auto',
+  fontSize: '1.1rem',
+  color: "rgba(248, 245, 250, 0.76)",
+  textAlign: 'left',
+  margin: '0',
   marginBottom: '1rem',
-  width: '50%',
+  width: '100%',
+  maxWidth: '34rem',
+  lineHeight: 1.8,
 }
 
 function SellingPointContainer({ sellingPoint, sellingPointDescription, sellingPointImage, imageRight }) {
-  const imageRef = React.useRef(null);
-  const imageRefLeft = React.useRef(null);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      // check window size, if less than 600px, return
-      if (window.innerWidth < 1200) {
-        if (imageRef.current) imageRef.current.style.right = "0px";
-        if (imageRefLeft.current) imageRefLeft.current.style.left = "0px";
-        return
-      };
-
-      const value = Math.floor(window.scrollY / 20)
-      if (imageRef.current) {
-        imageRef.current.style.right = `${value}px`;
-      }
-
-      if (imageRefLeft.current) {
-        // imageRef.current.style.top = `${Math.floor(window.scrollY / 10)}px`;
-        imageRefLeft.current.style.left = `${value}px`;
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   const imageStyle = {
-    position: "relative",
-    width: "40%",
-    justifyContent: "center",
-    display: "block",
-    margin: "auto",
+    width: "100%",
+    maxWidth: "34rem",
+    maxHeight: "24rem",
+    objectFit: "contain",
   }
 
-  if (imageRight) return (
-    <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
-      <Grid item xs={12} md={6} margin="auto">
-        <Box height="100%">
-          <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
-          <p style={sellingPointDescriptionStyle}>{sellingPointDescription}</p>
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={6} margin="auto">
-        <Box height="100%">
-          <img ref={imageRef} src={sellingPointImage} alt={sellingPoint} style={imageStyle} />
-        </Box>
-      </Grid>
-    </Grid>
-  )
   return (
-    <Grid container justifyContent="center" spacing={4} marginTop={"30vh"}>
-      <Grid item xs={12} md={6} margin="auto">
-        <Box height="100%">
-          <img ref={imageRefLeft} src={sellingPointImage} alt={sellingPoint} style={imageStyle} />
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={6} margin="auto">
-        <Box height="100%">
-          <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
-          <p style={sellingPointDescriptionStyle}>{sellingPointDescription}</p>
-        </Box>
-      </Grid>
-    </Grid>
+    <Box
+      sx={{
+        width: "min(100%, 74rem)",
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" },
+        alignItems: "center",
+        gap: { xs: 2, md: 5 },
+        "& > img": {
+          gridColumn: { xs: "1", md: imageRight ? "2" : "1" },
+          gridRow: { xs: "2", md: "1" },
+          justifySelf: "center",
+        },
+        "& > .selling-point-copy": {
+          gridColumn: { xs: "1", md: imageRight ? "1" : "2" },
+          gridRow: "1",
+          p: { xs: 2, sm: 3, md: 4 },
+          borderRadius: { xs: "1rem", md: "1.5rem" },
+          background: "linear-gradient(135deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025))",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 20px 55px rgba(0, 0, 0, 0.2)",
+          backdropFilter: "blur(12px)",
+        },
+      }}
+    >
+      <Box className="selling-point-copy">
+        <h4 style={sellingPointTitleStyle}>{sellingPoint}</h4>
+        <p style={sellingPointDescriptionStyle}>{sellingPointDescription}</p>
+      </Box>
+      <img src={sellingPointImage} alt={sellingPoint} style={imageStyle} />
+    </Box>
   )
 }
 

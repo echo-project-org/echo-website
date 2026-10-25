@@ -5,10 +5,18 @@ const StyledBodyContainer = styled(Container)(({ theme }) => ({
         textAlign: "center",
         color: "white",
         display: "flex",
-        height: "50%",
+        flex: 1,
+        minHeight: "55vh",
         justifyContent: "center",
         flexDirection: "column",
-        lineHeight: "3.5rem",
+        lineHeight: 1.6,
+        "& h1": {
+            fontSize: "clamp(2rem, 5vw, 3.25rem)",
+        },
+        "& p": {
+            color: "rgba(248, 245, 250, 0.7)",
+            fontSize: "1.15rem",
+        },
         "a": {
             color: "#bc5dc8",
             textDecoration: "none",

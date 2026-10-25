@@ -12,7 +12,6 @@ const StyledBodyContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     display: "flex",
     width: "100%",
-    height: "fit-content",
     flexDirection: "column",
     flex: "1 0 auto",
   }
@@ -25,27 +24,33 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
-    width: "75%",
+    minHeight: "min(100vh, 900px)",
+    width: "100%",
     margin: "auto",
-    gap: "1rem",
-    color: "white",
+    padding: "7rem 1.25rem 4rem",
+    gap: "1.25rem",
+    color: "#f8f5fa",
     textAlign: "center",
+    overflow: "hidden",
     "& h1": {
-      fontSize: "2rem",
+      fontSize: "clamp(2.5rem, 8vw, 5.5rem)",
+      lineHeight: 1.1,
     },
     "& p": {
-      fontSize: "1rem",
+      fontSize: "clamp(1rem, 2.2vw, 1.35rem)",
+      lineHeight: 1.7,
+      maxWidth: "46rem",
     },
     "& h2": {
-      fontSize: "1.5rem",
+      fontSize: "clamp(1.35rem, 3vw, 1.8rem)",
+      marginTop: "1rem",
     },
     "& a": {
-      color: "#bc5dc8",
+      color: "#dda6eb",
       textDecoration: "none",
-      transition: "color 0.1s ease-in-out",
+      transition: "color 180ms ease",
       "&:hover": {
-        color: "#ea94f4",
+        color: "#f0c9fa",
       },
     },
   },
@@ -55,27 +60,29 @@ const FirstArticleContainer = styled("div")(({ theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    minHeight: "min(100vh, 900px)",
     width: "100%",
+    maxWidth: "76rem",
     margin: "auto",
-    gap: "1rem",
-    color: "white",
+    padding: "7rem 2rem 4rem",
+    gap: "1.25rem",
+    color: "#f8f5fa",
     textAlign: "center",
     "& h1": {
-      fontSize: "3rem",
+      fontSize: "clamp(4rem, 7vw, 5.5rem)",
     },
     "& p": {
-      fontSize: "1.5rem",
+      fontSize: "1.35rem",
     },
     "& h2": {
-      fontSize: "2rem",
+      fontSize: "1.8rem",
     },
     "& a": {
-      color: "#bc5dc8",
+      color: "#dda6eb",
       textDecoration: "none",
-      transition: "all 0.1s ease-in-out",
+      transition: "color 180ms ease",
       "&:hover": {
-        color: "#ea94f4",
+        color: "#f0c9fa",
       },
     },
   }
@@ -86,50 +93,68 @@ const ArticleContainer = styled("div")(({ theme }) => ({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
     height: "fit-content",
     width: "100%",
-    margin: "0",
+    margin: "0 auto 3rem",
+    padding: "2rem 0 5rem",
   }
 }));
+
+const GalleryHeading = styled("div")({
+  width: "100%",
+  marginBottom: "2rem",
+  padding: "0.75rem 1rem",
+  borderBottom: "1px solid rgba(221, 166, 235, 0.35)",
+  backgroundColor: "rgba(255, 255, 255, 0.035)",
+  color: "#dda6eb",
+  textAlign: "center",
+  textTransform: "uppercase",
+  letterSpacing: "0.16em",
+  fontSize: "0.9rem",
+  fontWeight: 600,
+});
 
 const SellingPointsContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     position: "relative",
     display: "flex",
     flexDirection: "column",
+    gap: "1.5rem",
     justifyContent: "center",
     alignItems: "center",
     height: "fit-content",
     width: "100%",
     margin: "auto",
-    marginBottom: "30vh"
+    marginBottom: "0",
+    padding: "3rem 1rem 5rem",
+  },
+  [theme.breakpoints.up('md')]: {
+    gap: "2rem",
   }
 }));
 
 const DownloadButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     zIndex: "1",
-    margin: "0 0 2rem 0",
+    margin: "0",
     position: "relative",
-    width: "20rem",
-    height: "4rem",
-    top: "1rem",
-    backgroundColor: "rgb(142, 77, 156)",
+    width: "min(100%, 18rem)",
+    minHeight: "3.5rem",
+    backgroundColor: "#8e4d9c",
     color: "white",
-    borderRadius: "1rem",
-    border: "1px solid rgba(255,255,255,0.75)",
-    boxShadow: "0px 10px 20px 2px rgb(106, 57, 117, .8)",
+    borderRadius: "0.85rem",
+    border: "1px solid rgba(255,255,255,0.2)",
+    boxShadow: "0 12px 28px rgba(91, 45, 102, 0.32)",
+    transition: "transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease",
     "&:hover": {
-      transform: "translateY(-5px)",
-      backgroundColor: "rgb(212, 116, 233)",
-      boxShadow: "0px 10px 10px 2px rgb(142, 77, 156, .8)",
+      transform: "translateY(-3px)",
+      backgroundColor: "#a65db5",
+      boxShadow: "0 16px 32px rgba(91, 45, 102, 0.4)",
     },
     "& span": {
       color: "white",
       fontWeight: "bold",
-      fontSize: "1.5rem",
+      fontSize: "1.05rem",
       textDecoration: "none",
     }
   }
@@ -138,25 +163,25 @@ const DownloadButton = styled(Button)(({ theme }) => ({
 const MoreVersionsButton = styled(Button)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     zIndex: "1",
-    margin: "0 0 2rem 0",
+    margin: "0",
     position: "relative",
-    width: "20rem",
-    height: "4rem",
-    top: "1rem",
-    backgroundColor: "rgba(142, 77, 156, .1)",
+    width: "min(100%, 18rem)",
+    minHeight: "3.5rem",
+    backgroundColor: "rgba(255, 255, 255, 0.035)",
     color: "white",
-    borderRadius: "1rem",
-    border: "1px solid rgba(255,255,255,0.75)",
-    boxShadow: "0px 10px 20px 2px rgba(68, 36, 72, .8)",
+    borderRadius: "0.85rem",
+    border: "1px solid rgba(255,255,255,0.2)",
+    boxShadow: "0 12px 28px rgba(0, 0, 0, 0.18)",
+    transition: "transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease",
     "&:hover": {
-      transform: "translateY(-5px)",
-      backgroundColor: "rgba(212, 116, 233, .1)",
-      boxShadow: "0px 10px 10px 2px rgb(90, 47, 97, .8)",
+      transform: "translateY(-3px)",
+      backgroundColor: "rgba(255, 255, 255, 0.08)",
+      boxShadow: "0 16px 32px rgba(0, 0, 0, 0.24)",
     },
     "& span": {
       color: "white",
       fontWeight: "bold",
-      fontSize: "1.5rem",
+      fontSize: "1.05rem",
       textDecoration: "none",
     }
   }
@@ -165,20 +190,22 @@ const MoreVersionsButton = styled(Button)(({ theme }) => ({
 function Home({ }) {
   const divStyle = {
     zIndex: "1",
-    backgroundColor: "rgba(245, 163, 255, 0.1)",
+    backgroundColor: "rgba(255, 255, 255, 0.035)",
     width: "100%",
-    padding: "1rem",
-    boxShadow: "0px 3px 0px 0px rgba(245, 163, 255, 0.75)",
-    border: "1px solid rgba(245, 163, 255, 0.75)",
-    color: "rgb(245, 163, 255)",
+    padding: "0.75rem 1rem",
+    borderBottom: "1px solid rgba(221, 166, 235, 0.35)",
+    color: "#dda6eb",
     textTransform: "uppercase",
+    letterSpacing: "0.16em",
+    fontSize: "0.9rem",
+    fontWeight: 600,
   }
 
   const containerStyle = {
     zIndex: "1",
     color: "white",
-    fontSize: "3rem",
-    margin: "2rem 0 2rem 0",
+    fontSize: "clamp(1.5rem, 4vw, 2.25rem)",
+    margin: "0 0 2rem",
     justifyContent: "center",
     textAlign: "center",
     alignItems: "center",
@@ -193,7 +220,7 @@ function Home({ }) {
         <h2 style={{marginTop: "2rem"}}>Want to help?</h2>
         <p>Check us out on <a href="https://github.com/echo-project-org" target="_blank">Github</a></p>
 
-        <Grid container justifyContent="center" spacing={4}>
+        <Grid container justifyContent="center" spacing={2} sx={{ width: "100%", mt: 1 }}>
           <Grid item>
             <DownloadButton
               variant="contained"
@@ -217,13 +244,15 @@ function Home({ }) {
 
         <ExpandMore
           sx={{
-            color: "white",
-            fontSize: "4rem",
+            color: "rgba(255, 255, 255, 0.72)",
+            fontSize: "3rem",
             position: "absolute",
-            bottom: "1rem",
+            bottom: "1.25rem",
             cursor: "pointer",
+            transition: "color 180ms ease, transform 180ms ease",
             "&:hover": {
-              color: "#bc5dc8",
+              color: "#dda6eb",
+              transform: "translateY(3px)",
             }
           }}
 
@@ -237,9 +266,7 @@ function Home({ }) {
       </FirstArticleContainer>
 
       <Divider sx={{
-        color: "white",
-        backgroundColor: "white",
-        boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
+        backgroundColor: "rgba(255, 255, 255, 0.12)",
       }} />
 
       <SellingPointsContainer>
@@ -259,9 +286,7 @@ function Home({ }) {
       </SellingPointsContainer>
 
 {/*       <Divider sx={{
-        color: "white",
-        backgroundColor: "white",
-        boxShadow: "0px 0px 8px 1px rgba(255,255,255,0.9)",
+        backgroundColor: "rgba(255, 255, 255, 0.12)",
       }} />
 
       <ArticleContainer>
@@ -281,11 +306,7 @@ function Home({ }) {
       }} />
 
       <ArticleContainer>
-        <Container sx={containerStyle}>
-          <div style={divStyle}>
-            Gallery
-          </div>
-        </Container>
+        <GalleryHeading>Gallery</GalleryHeading>
 
         <ImageGallery />
       </ArticleContainer>

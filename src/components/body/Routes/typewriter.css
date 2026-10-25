@@ -1,35 +1,23 @@
 .line-1 {
     position: relative;
-    width: 9em;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
-    border-right: 2px solid rgba(255, 255, 255, .75);
     text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
-/* Animation */
 .anim-typewriter {
-    animation: typewriter 1s steps(16) 0s 1 normal both,
-        blinkTextCursor 1000ms steps(2) infinite normal;
+    animation: title-arrive 700ms ease-out both;
 }
 
-@keyframes typewriter {
+@keyframes title-arrive {
     from {
-        width: 0;
+        opacity: 0;
+        transform: translateY(12px);
     }
 
     to {
-        width: 8.6em;
-    }
-}
-
-@keyframes blinkTextCursor {
-    from {
-        border-right-color: rgba(255, 255, 255, .75);
-    }
-
-    to {
-        border-right-color: transparent;
+        opacity: 1;
+        transform: translateY(0);
     }
 }

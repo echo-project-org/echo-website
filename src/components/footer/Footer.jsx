@@ -3,28 +3,35 @@ import { Favorite } from '@mui/icons-material';
 
 const FooterContainer = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    position: "absolute",
-    backgroundColor: "#49294d",
+    position: "relative",
+    marginTop: "auto",
+    backgroundColor: "rgba(31, 24, 37, 0.92)",
     width: "100%",
-    height: "2.8rem",
+    minHeight: "3.25rem",
     display: "flex",
-    justifyContent: "left",
-    boxShadow: "0px 0px 5px 0px rgba(255,255,255,0.4)",
+    justifyContent: "center",
+    borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+    boxShadow: "0 -8px 28px rgba(0, 0, 0, 0.12)",
+    zIndex: 1,
   }
 }))
 
 const StyledFooterTypography = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    margin: "auto 0 auto 0",
+    margin: "auto",
     color: "white",
     display: "flex",
-    padding: "0 0 0 1rem",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    padding: "0.75rem 1rem",
+    fontSize: "0.9rem",
     "a": {
-      color: "#bc5dc8",
+      color: "#dda6eb",
       padding: "0 .5rem 0 .5rem",
       textDecoration: "none",
       "&:hover": {
-        color: "#ea94f4",
+        color: "#f0c9fa",
       },
     },
   }

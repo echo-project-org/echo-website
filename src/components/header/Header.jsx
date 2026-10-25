@@ -12,21 +12,24 @@ import logo from "../../icon.svg";
 const StyledContainerItem = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     position: "fixed",
-    zIndex: "1000",
-    margin: "2rem 0 0 2rem",
+    zIndex: 1000,
+    top: "1.25rem",
+    left: "1.25rem",
     borderRadius: "50%",
-    width: "5rem",
-    height: "5rem",
+    width: "3.5rem",
+    height: "3.5rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgb(133, 118, 134)",
-    opacity: "0.4",
-    transition: "all 0.1s ease-in-out",
+    backgroundColor: "rgba(41, 31, 48, 0.82)",
+    border: "1px solid rgba(255, 255, 255, 0.14)",
+    boxShadow: "0 8px 28px rgba(0, 0, 0, 0.25)",
+    backdropFilter: "blur(14px)",
+    transition: "background-color 180ms ease, transform 180ms ease",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: "rgb(170, 151, 172)",
-      opacity: "1",
+      backgroundColor: "rgba(93, 58, 105, 0.95)",
+      transform: "translateY(-2px)",
     },
   },
 }));
@@ -34,20 +37,23 @@ const StyledContainerItem = styled("div")(({ theme }) => ({
 const HeaderElement = styled("div")(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     position: "fixed",
-    zIndex: "1",
+    zIndex: 1000,
     borderRadius: "50%",
-    margin: "2rem 0 0 3.2rem",
+    left: "1.75rem",
     width: "2.5rem",
     height: "2.5rem",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgb(133, 118, 134)",
-    transition: "all 0.1s ease-in-out",
+    backgroundColor: "rgba(41, 31, 48, 0.92)",
+    border: "1px solid rgba(255, 255, 255, 0.14)",
+    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.24)",
+    transition: "background-color 180ms ease, transform 180ms ease",
     color: "white",
     "&:hover": {
       cursor: "pointer",
-      backgroundColor: "rgb(170, 151, 172)",
+      backgroundColor: "rgba(93, 58, 105, 0.95)",
+      transform: "translateX(2px)",
     },
   },
 }));
@@ -74,7 +80,7 @@ function HeaderSubmenu({ clicked }) {
             <Tooltip title={element.name} placement="right">
               <HeaderElement
                 sx={{
-                  top: `${(index * 4) + 6}rem`,
+                  top: `${(index * 3.25) + 5.5}rem`,
                 }}
                 key={index}
                 onClick={() => {
@@ -113,8 +119,8 @@ function Header({ }) {
             alt="logo"
             className={subMenu ? "rotate" : (wasOpened ? "rotateInv" : "")}
             style={{
-              height: "3rem",
-              width: "3rem",
+              height: "2.5rem",
+              width: "2.5rem",
             }}
           />
         </StyledContainerItem>

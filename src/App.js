@@ -7,8 +7,9 @@ import { HashRouter } from "react-router-dom";
 function App() {
 
   const style = {
-    width: '100vw',
-    height: '100vh',
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
   }
 
   return (

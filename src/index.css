@@ -1,22 +1,36 @@
-/* import a font */
-
 * {
-    font-family: "LTInstitute" !important;
+    font-family: "LTInstitute", "Segoe UI", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
-
-
-    user-select: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    width: 100vw;
+    min-width: 320px;
+    min-height: 100vh;
     overflow-x: hidden;
-    background-color: #331b36;
+    color: #f8f5fa;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(117, 62, 139, 0.25), transparent 48rem),
+        #17121d;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 2px solid #d9a2e6;
+    outline-offset: 4px;
 }
 
 .noselect {
@@ -26,4 +40,15 @@ body {
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

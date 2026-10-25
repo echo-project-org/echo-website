@@ -1,9 +1,11 @@
 .bubble {
     z-index: -1;
-    background-color: #f5f5f5;
+    background-color: #c785da;
     border-radius: 50%;
     position: fixed;
     bottom: 0;
+    opacity: .08;
+    pointer-events: none;
 }
 
 @keyframes moveUp {
